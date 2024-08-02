@@ -21,6 +21,8 @@ export class UsersComponent implements OnInit {
   }
 
   constructor(private ss:UsersService){
+
+    
   }
 
   users:any;
