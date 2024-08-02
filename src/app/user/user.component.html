@@ -1,0 +1,70 @@
+<!-- {{user|json}} -->
+
+<label for="">User Details</label>
+
+<table class="table table-bordered">
+  <tr>
+    <th>Id</th>
+    <td>{{ user.id }}</td>
+  </tr>
+  <tr>
+    <th>Name</th>
+    <td>{{ user.name }}</td>
+  </tr>
+
+  <tr>
+    <th>City</th>
+    <td>{{ user.address.city }}</td>
+  </tr>
+
+  <tr>
+    <th>Email</th>
+    <td>
+      {{ user.email }}
+    </td>
+  </tr>
+  <tr>
+    <th>Phone</th>
+    <td>
+      {{ user.phone }}
+    </td>
+  </tr>
+</table>
+
+<ul class="navbar-nav mr-auto">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="address" routerLinkActive="bg-secondary text-light"
+          [routerLinkActiveOptions]={exact:true}>Address</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="company" routerLinkActive="bg-secondary text-light"
+          [routerLinkActiveOptions]={exact:true}>Company</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- <li class="nav nav-tab">
+    <a class="nav-link" routerLink="address">Address</a>
+    <a class="nav-link" routerLink="company">Company</a>
+
+  </li> -->
+
+  <router-outlet></router-outlet>
+
+
+</ul>

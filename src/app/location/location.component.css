@@ -1,0 +1,17 @@
+.parent{
+    display: flex;
+    flex-direction: column;
+    
+    float: left;
+    border-color: black;
+    height: 100%;
+    width: 50%;
+    
+}
+
+
+ul {
+    
+    list-style-type: none;
+}
+  

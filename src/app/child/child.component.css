@@ -1,0 +1,12 @@
+.childcomp{
+    background:lightgray;
+    padding:40px
+}
+.btnclass{
+    background-color: black;
+    color: white;
+
+}
+button:hover{
+    cursor: pointer;
+}

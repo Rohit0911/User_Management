@@ -1,0 +1,38 @@
+<div>
+    <br>
+    <button class="btn btn-secondary" [routerLink]="['/add-user']"> Add User</button>
+    <!-- <h3 class="text-center">Parent Component -Root Component: <p>{{childData}}</p></h3> -->
+    <!-- <app-child [uname]="username"></app-child> -->
+     <!-- <app-child (notify)="parentMethod($event)"></app-child> -->
+    <h3 class="text-center">{{pageTitle | titlecase}}</h3>
+    <div *ngIf="(users.length)>0; else nousers">
+     <table class="table table-bordered">
+        <tr class="bg-primary">
+            <th>Id</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+        <!-- <tr *ngFor="let user of users">
+            <td>{{user.id }}</td>
+            <td>{{user.name |uppercase}}</td>
+            <td>{{user.city}}</td>
+            <td>{{user.salary |currency}}</td>
+            <td>{{user.dob | date}}</td>
+        </tr> -->
+        <tr *ngFor="let user of users">
+            <td> <a [routerLink]="['/user',user.id]"></a> {{user.id }}</td>
+            <td>{{user.name | uppercase}}</td>
+            <td>{{user.address.city}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+        </tr>
+     </table>
+    </div> 
+    <ng-template #nousers>
+       <p class="alert alert-danger text-center">{{errorMsg}} </p>
+    </ng-template>
+     <!-- Now we can format the Date but if we want to display age then we have to create a Custom Pipe -->
+     <router-outlet></router-outlet>
+</div>
